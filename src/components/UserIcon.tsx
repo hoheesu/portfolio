@@ -6,7 +6,7 @@ import { mixins } from "../styles/theme";
 function UserIcon() {
   return (
     <FlexBox>
-      <User icon="solar:user-bold" />
+      {/* <User icon="solar:user-bold" /> */}
       <h2>윤준수</h2>
       <ClickBox>
         <h3>포트폴리오를 보시려면 클릭해주세요</h3>
