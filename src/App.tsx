@@ -1,14 +1,17 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import GlobalStyle from "./styles/globalstyle.tsx";
 import UserIcon from "./components/UserIcon.tsx";
 import { mixins } from "./styles/theme";
 
 function App() {
+  const [userClick, setUserClick] = useState(false);
+  useEffect(() => {}, [userClick]);
   return (
     <>
       <GlobalStyle />
       <MainBg>
-        <UserIcon />
+        {userClick ? "" : <UserIcon setUserClick={setUserClick} />}
       </MainBg>
     </>
   );

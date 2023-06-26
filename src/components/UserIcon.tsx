@@ -2,9 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { mixins } from "../styles/theme";
 
-function UserIcon() {
+interface props {
+  setUserClick: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function UserIcon({ setUserClick }: props) {
+  const iconClick = () => {
+    setUserClick(true);
+    console.log("Click~!");
+  };
   return (
-    <FlexBox>
+    <FlexBox onClick={iconClick}>
       <IconBox>
         <UserImg src="src/assets/userImg.png" alt="user icon" />
       </IconBox>
@@ -17,6 +25,7 @@ function UserIcon() {
 }
 const FlexBox = styled.div`
   ${mixins.centerFlex};
+  cursor: pointer;
   flex-direction: column;
   width: max-content;
   gap: 2em;
