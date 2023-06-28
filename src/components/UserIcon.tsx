@@ -32,12 +32,12 @@ const FlexBox = styled.div`
 `;
 const UserName = styled.h2`
   font-size: 2em;
-  color: var(--color-box);
-  text-shadow: 1px 1px 1px #333;
+  color: var(--color-font);
+  text-shadow: 2px 3px 2px #333;
 `;
 const ClickBox = styled.div`
   ${mixins.centerFlex};
-  background-color: var(--color-box);
+  background-color: var(--color-font);
   width: 20em;
   height: 2em;
   border-radius: 1em;
@@ -46,7 +46,7 @@ const IconBox = styled.div`
   ${mixins.centerFlex};
   width: max-content;
   border-radius: 50%;
-  background-color: var(--color-box);
+  background-color: var(--color-font);
 `;
 const UserImg = styled.img`
   color: var(--color-icon);

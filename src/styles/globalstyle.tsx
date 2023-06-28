@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* Color */
     --color-icon: #85b6ff;
-    --color-box: #d9d9d9;
+    --color-font: #d9d9d9;
 
   }
   
