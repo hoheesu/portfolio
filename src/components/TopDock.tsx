@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 import { mixins } from "../styles/theme";
 import dateFormat from "../util/dateFormat.tsx";
+import { getWeather } from "../api/api.tsx";
 
 function TopDock() {
+  useEffect(() => {
+    getWeather();
+  }, []);
   return (
     <DockBack>
       <Icon icon="ic:baseline-apple" width="2rem" color="var(--color-font)" />
