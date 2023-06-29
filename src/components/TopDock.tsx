@@ -3,16 +3,16 @@ import { Icon } from "@iconify/react";
 import styled from "styled-components";
 import { mixins } from "../styles/theme";
 import dateFormat from "../util/dateFormat.tsx";
-import { getWeather } from "../api/api.tsx";
+import weatherFormat from "../util/weatherFormat.tsx";
 
 function TopDock() {
-  useEffect(() => {
-    getWeather();
-  }, []);
+  // const a: any = weatherFormat.weatherIcon;
+  useEffect(() => {}, []);
   return (
     <DockBack>
       <Icon icon="ic:baseline-apple" width="2rem" color="var(--color-font)" />
       <RightBox>
+        {/* <Icon icon={a} /> */}
         <Icon
           icon="material-symbols:wifi"
           width="1.5rem"
