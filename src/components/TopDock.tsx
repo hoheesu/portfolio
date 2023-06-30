@@ -6,19 +6,23 @@ import dateFormat from "../util/dateFormat.tsx";
 import weatherFormat from "../util/weatherFormat.tsx";
 
 function TopDock() {
-  // const a: any = weatherFormat.weatherIcon;
-  useEffect(() => {}, []);
+  const [temp, setTemp] = useState(0);
+  const [weatherIcon, setWeatherIcon] = useState("");
+  const weatherF = weatherFormat();
+  useEffect(() => {
+    (async () => {
+      setTemp((await weatherF).temp);
+      setWeatherIcon((await weatherF).weatherIcon);
+      console.log(temp, weatherIcon);
+    })();
+  }, []);
   return (
     <DockBack>
       <Icon icon="ic:baseline-apple" width="2rem" color="var(--color-font)" />
       <RightBox>
-        {/* <Icon icon={a} /> */}
-        <Icon
-          icon="material-symbols:wifi"
-          width="1.5rem"
-          height="2rem"
-          color="var(--color-font)"
-        />
+        <Temp>{temp} °C</Temp>
+        <Icon icon={weatherIcon} width="1.5rem" color="var(--color-font)" />
+        <Icon icon="ic:outline-wifi" width="1.5rem" color="var(--color-font)" />
         <Date>{dateFormat()}</Date>
       </RightBox>
     </DockBack>
@@ -33,6 +37,10 @@ const DockBack = styled.div`
   width: 100vw;
   height: 3rem;
   background-color: #00000016;
+`;
+const Temp = styled.p`
+  color: var(--color-font);
+  line-height: 2rem;
 `;
 const RightBox = styled.div`
   ${mixins.centerFlex};

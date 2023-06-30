@@ -36,11 +36,9 @@ async function weatherFormat() {
       weatherIcon = "mdi:weather-mist";
       break;
   }
-  console.log(temp, weatherIcon);
+  // console.log(temp, weatherIcon);
 
-  let allData = { temp: temp, weatherIcon: weatherIcon };
-
-  return allData;
+  return { temp: temp, weatherIcon: weatherIcon };
 }
 
 export default weatherFormat;
