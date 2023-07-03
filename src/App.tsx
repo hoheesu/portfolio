@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import GlobalStyle from "./styles/globalstyle.tsx";
+import UserIcon from "./components/UserIcon.tsx";
+import PageIcons from "./components/PageIcons.tsx";
+import TopDock from "./components/TopDock.tsx";
+import BotDock from "./components/BotDock.tsx";
+import { mixins } from "./styles/theme";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [userClick, setUserClick] = useState(false);
+  useEffect(() => {}, [userClick]);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GlobalStyle />
+      <MainBg>
+        <TopDock />
+        {userClick ? <PageIcons /> : <UserIcon setUserClick={setUserClick} />}
+        {userClick ? <BotDock /> : <div></div>}
+      </MainBg>
     </>
-  )
+  );
 }
 
-export default App
+const backgroundImg = "src/assets/portfolioBg.jpg";
+
+const MainBg = styled.div`
+  position: fixed;
+  ${mixins.centerFlex};
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(${backgroundImg});
+  width: 100vw;
+  height: 100vh;
+`;
+export default App;
