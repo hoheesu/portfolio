@@ -16,7 +16,7 @@ function App() {
       <MainBg>
         <TopDock />
         {userClick ? <PageIcons /> : <UserIcon setUserClick={setUserClick} />}
-        <BotDock />
+        {userClick ? <BotDock /> : <div></div>}
       </MainBg>
     </>
   );
@@ -25,6 +25,7 @@ function App() {
 const backgroundImg = "src/assets/portfolioBg.jpg";
 
 const MainBg = styled.div`
+  position: fixed;
   ${mixins.centerFlex};
   flex-direction: column;
   justify-content: space-between;

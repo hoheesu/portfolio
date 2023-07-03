@@ -2,6 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 import { mixins } from "../styles/theme";
+import { Link } from "react-router-dom";
 
 interface Props {
   iconTitle: string;
@@ -9,14 +10,15 @@ interface Props {
 
 function PageIcon({ iconTitle }: Props) {
   return (
-    <Folder>
+    <Folder to="/portfolio">
       <FolderIcon icon="material-symbols:folder" width="6rem" />
       <Title>{iconTitle}</Title>
     </Folder>
   );
 }
 
-const Folder = styled.div`
+const Folder = styled(Link)`
+  text-decoration: none;
   ${mixins.centerFlex};
   flex-direction: column;
   cursor: pointer;
