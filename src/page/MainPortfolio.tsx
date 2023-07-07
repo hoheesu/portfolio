@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { mixins } from "../styles/theme";
 import GlobalStyle from "../styles/globalstyle";
 import TopDock from "../components/TopDock";
-import VsCodeBack from "../components/VsCodeBack";
+import VsCodeMain from "../components/vsCode/VsCodeMain";
 
 function MainPortfolio() {
   return (
     <MainBg>
       <GlobalStyle />
       <TopDock />
-      <VsCodeBack />
-      <P>for flex - space-between</P>
+      <VsCodeMain />
+      <P>flex를 위한 태그</P>
     </MainBg>
   );
 }
