@@ -1,21 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 function VsAside() {
+  const [buttonNum, setButtonNum] = useState<string>("");
+  useEffect(() => {
+    switch (buttonNum) {
+      case "about":
+        console.log("about me");
+        break;
+      case "skill":
+        console.log("skills");
+        break;
+      case "project":
+        console.log("projects");
+        break;
+      case "contact":
+        console.log("contact");
+        break;
+    }
+  }, [buttonNum]);
+  const checkBtn = () => {};
   return (
     <AsideBox>
       <ul>
         <Li>
-          <Button>About Me</Button>
+          <Button href="#about" onClick={() => setButtonNum("about")}>
+            About Me
+          </Button>
         </Li>
         <Li>
-          <Button>Skills</Button>
+          <Button href="#skill" onClick={() => setButtonNum("skill")}>
+            Skills
+          </Button>
         </Li>
         <Li>
-          <Button>Projects</Button>
+          <Button href="#project" onClick={() => setButtonNum("project")}>
+            Projects
+          </Button>
         </Li>
         <Li>
-          <Button>Contact</Button>
+          <Button href="#contact" onClick={() => setButtonNum("contact")}>
+            Contact
+          </Button>
         </Li>
       </ul>
     </AsideBox>
@@ -32,11 +58,12 @@ const Li = styled.li`
   padding: 3rem 0 0 2rem;
   box-sizing: border-box;
 `;
-const Button = styled.button`
+const Button = styled.a`
   background-color: transparent;
   border: none;
   padding: 0;
   font-size: 1.5rem;
   color: var(--color-font);
+  cursor: pointer;
 `;
 export default VsAside;

@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import VsHeader from "./VsHeader";
 import VsAside from "./VsAside";
+import MainContent from "./MainContent";
 
 function VsCodeMain() {
   return (
     <VsBg>
       <VsHeader />
-      <VsAside />
+      <FlexBox>
+        <VsAside />
+        <MainContent />
+      </FlexBox>
     </VsBg>
   );
 }
@@ -17,6 +21,10 @@ const VsBg = styled.div`
   width: 95vw;
   height: 85vh;
   border-radius: 20px;
+  overflow: hidden;
+`;
+const FlexBox = styled.div`
+  display: flex;
 `;
 
 export default VsCodeMain;
