@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import VsHeader from "./VsHeader";
-import VsAside from "./VsAside";
-import MainContent from "./MainContent";
+import VsNav from "./VsNav";
+import MainContent from "../MainContent";
 
 function VsCodeMain() {
   return (
     <VsBg>
       <VsHeader />
       <FlexBox>
-        <VsAside />
+        <VsNav />
         <MainContent />
       </FlexBox>
     </VsBg>

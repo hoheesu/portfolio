@@ -26,7 +26,7 @@ const Div = styled.div`
 `;
 const Section1 = styled.section`
   height: 1500px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 `;
 const Section2 = styled.section`
   height: 1500px;

@@ -10,7 +10,19 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/portfolio",
+    path: "/folderpt",
+    element: <MainPortfolio />,
+  },
+  {
+    path: "/chromept",
+    element: <MainPortfolio />,
+  },
+  {
+    path: "/vspt",
+    element: <MainPortfolio />,
+  },
+  {
+    path: "/notept",
     element: <MainPortfolio />,
   },
 ]);
