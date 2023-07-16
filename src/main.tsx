@@ -1,20 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.tsx";
-import MainPortfolio from "./page/MainPortfolio.tsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/portfolio",
-    element: <MainPortfolio />,
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import router from "./router";
+import store from "./store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={router} />,
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
 );

@@ -7,16 +7,32 @@ function PageIcons() {
   return (
     <PageList>
       <li>
-        <PageIcon iconTitle="Portfolio" />
+        <PageIcon
+          iconTitle="폴더로 보기"
+          iconSrc="zondicons:folder"
+          iconUrl="/folderpt"
+        />
       </li>
       <li>
-        <PageIcon iconTitle="Skills" />
+        <PageIcon
+          iconTitle="크롬으로 보기"
+          iconSrc="logos:chrome"
+          iconUrl="/chromept"
+        />
       </li>
       <li>
-        <PageIcon iconTitle="Project" />
+        <PageIcon
+          iconTitle="VSCode로 보기"
+          iconSrc="skill-icons:vscode-light"
+          iconUrl="/vspt"
+        />
       </li>
       <li>
-        <PageIcon iconTitle="Contact" />
+        <PageIcon
+          iconTitle="메모로 보기"
+          iconSrc="fxemoji:emptynote"
+          iconUrl="/notept"
+        />
       </li>
     </PageList>
   );

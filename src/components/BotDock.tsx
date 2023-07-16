@@ -56,7 +56,7 @@ const DockList = styled.li`
     position: absolute;
     opacity: 0;
     width: max-content;
-    background-color: #333;
+    background-color: #333333dd;
     color: var(--color-font);
     top: 50%;
     left: 50%;

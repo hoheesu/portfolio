@@ -1,18 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import { mixins } from "../styles/theme";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store";
+import { iconClick } from "../store/mainIconSlice";
 
-interface props {
-  setUserClick: React.Dispatch<React.SetStateAction<boolean>>;
-}
+function UserIcon() {
+  const dispatch = useDispatch();
+  const mainIcon = useSelector((state: RootState) => {
+    return state.mainIcon.value;
+  });
 
-function UserIcon({ setUserClick }: props) {
-  const iconClick = () => {
-    setUserClick(true);
-    console.log("Click~!");
+  const clickIcon = () => {
+    dispatch(iconClick(true));
   };
+
+  console.log(mainIcon);
+
   return (
-    <FlexBox onClick={iconClick}>
+    <FlexBox
+      onClick={() => {
+        clickIcon();
+      }}
+    >
       <IconBox>
         <UserImg src="src/assets/userImg.png" alt="user icon" />
       </IconBox>
