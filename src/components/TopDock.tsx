@@ -13,7 +13,6 @@ function TopDock() {
     (async () => {
       setTemp((await weatherF).temp);
       setWeatherIcon((await weatherF).weatherIcon);
-      console.log(temp, weatherIcon);
     })();
   }, []);
   return (

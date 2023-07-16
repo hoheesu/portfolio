@@ -5,17 +5,17 @@ type InitialState = {
   value: any;
 };
 
-const initialState: InitialState = { id: 1, value: 0 };
+const initialState: InitialState = { id: 1, value: false };
 const mainIconSlice = createSlice({
   name: "mainIcon",
   initialState,
   reducers: {
-    mainIcon: (state, action) => {
-      // console.log(state);
+    iconClick: (state, action) => {
+      console.log(state);
       state.value = !state.value || action.payload;
     },
   },
 });
 
 export default mainIconSlice;
-export const { mainIcon } = mainIconSlice.actions;
+export const { iconClick } = mainIconSlice.actions;
